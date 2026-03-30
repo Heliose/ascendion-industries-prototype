@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@theme {
+  /* === Brand Primitives === */
+  --color-k: #000000;
+  --color-k1: #0C0C0C;
+  --color-k2: #161616;
+  --color-k3: #1E1E1E;
+  --color-w: #FFFFFF;
+  --color-cream: #F4F3EF;
+  --color-cream2: #ECEAE4;
+  --color-cream3: #E2DED7;
+  --color-teal: #00FAC2;
+  --color-teal-a: rgba(0, 250, 194, 0.1);
+  --color-violet: #6464D7;
+  --color-green: #00634D;
+  --color-g6: #666660;
+
+  /* === Semantic (kept for transition) === */
+  --color-asc-dark: #000000;
+  --color-asc-teal: #00FAC2;
+  --color-asc-violet: #6464D7;
+  --color-asc-cream: #F4F3EF;
+  --color-asc-cream2: #ECEAE4;
+  --color-asc-cream3: #E2DED7;
+  --color-asc-muted: #666660;
+  --color-asc-green: #00634D;
+  --color-asc-border-light: rgba(0, 0, 0, 0.08);
+  --color-asc-border-dark: rgba(255, 255, 255, 0.12);
+
+  /* === Typography === */
+  --font-family-display: 'PP Neue Machina', 'Inter', system-ui, sans-serif;
+  --font-family-body: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-family-body);
+    background-color: var(--color-cream);
+    color: var(--color-k);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  ::selection {
+    background-color: rgba(0, 250, 194, 0.3);
+    color: white;
+  }
+  #root {
+    min-height: 100vh;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-family-display);
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb { background: var(--color-cream3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-teal); }
+
+/* === Section Rule === */
+.section-rule {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.section-rule::before,
+.section-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.1;
+}
+.section-rule span {
+  font-family: var(--font-family-display);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.35;
+  white-space: nowrap;
+}
+
+/* === Violet accent text === */
+.text-violet-accent {
+  color: var(--color-violet);
+}
+
+/* === Teal accent (dark sections only) === */
+.teal-accent {
+  color: var(--color-teal);
+}
+
+/* === Gradient text (teal, for dark sections) === */
+.gradient-text-dark {
+  background: linear-gradient(135deg, #00FAC2 0%, #B3FEED 50%, #00FAC2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === Violet gradient text (for light sections) === */
+.gradient-text {
+  background: linear-gradient(135deg, #6464D7 0%, #8B8BEF 50%, #6464D7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === Image brand filter === */
+.brand-image img {
+  filter: grayscale(20%) contrast(1.08) brightness(0.95);
+}
+.brand-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,250,194,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* === Dark section base === */
+.section-dark {
+  background-color: #000;
+  color: #fff;
+}
+.section-dark p, .section-dark span {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* === Light section base === */
+.section-light {
+  background-color: var(--color-cream);
+  color: var(--color-k);
+}
+
+/* === Teal glow (dark sections only) === */
+.glow-teal {
+  box-shadow: 0 0 30px rgba(0, 250, 194, 0.15), 0 0 60px rgba(0, 250, 194, 0.05);
+}
+
+/* === Card lift hover (AAVA pattern) === */
+.card-hover-light {
+  transition: transform 0.3s cubic-bezier(.16, 1, .3, 1), border-color 0.3s cubic-bezier(.16, 1, .3, 1), box-shadow 0.3s cubic-bezier(.16, 1, .3, 1);
+}
+.card-hover-light:hover {
+  transform: translateY(-4px);
+  border-color: rgba(100, 100, 215, 0.3);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+/* === Dot-grid background pattern === */
+.dot-grid-bg {
+  background-image: radial-gradient(circle, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.dot-grid-bg-dark {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* === Violet glow === */
+.glow-violet {
+  box-shadow: 0 0 8px rgba(100, 100, 215, 0.35);
+}
+
+/* === Teal bottom-line reveal (for images) === */
+.teal-line-reveal {
+  position: relative;
+  overflow: hidden;
+}
+.teal-line-reveal::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #00FAC2;
+  z-index: 2;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(.16, 1, .3, 1);
+  box-shadow: 0 0 12px rgba(0, 250, 194, 0.4);
+}
+.group:hover .teal-line-reveal::after,
+.teal-line-reveal:hover::after {
+  transform: scaleX(1);
+}
+
+/* === Noise texture overlay === */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
