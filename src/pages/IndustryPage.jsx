@@ -10,6 +10,8 @@ import HowWeDeliver from '../components/HowWeDeliver';
 import { HWDEditorial, HWDCardGrid, HWDHorizontalPanels, HWDTabbedSpotlight, HWDStackedMagazine } from '../components/HowWeDeliverAlts';
 import CTASection from '../components/CTASection';
 import { BentoGrid, Filmstrip, StackedReveal, SpotlightSelector, MagazineSpread } from '../components/CTASectionAlt';
+import { InsightsTimeline, InsightsRolodex, InsightsTickerFeed, InsightsMosaic, InsightsAccordionDigest } from '../components/InsightsAlts';
+import { RolodexLight, RolodexStacked, RolodexMinimal } from '../components/RolodexVariants';
 import ClosingCTA from '../components/ClosingCTA';
 import { ClosingDarkCinematic, ClosingSplitPanel, ClosingFloatingCard, ClosingMarquee, ClosingTerminal } from '../components/ClosingCTAAlts';
 import IndustrySwitcher from '../components/IndustrySwitcher';
@@ -123,6 +125,111 @@ export default function IndustryPage() {
         items={industry.ideasInsights}
         variant="insight"
       />
+
+      {/* ── Ideas & Insights Alt 1: Bento Grid ── */}
+      <BentoGrid
+        id="ideas-insights-bento"
+        title="Ideas & Insights"
+        items={industry.ideasInsights}
+        variant="insight"
+      />
+
+      {/* ── Ideas & Insights Alt 2: Filmstrip ── */}
+      <Filmstrip
+        id="ideas-insights-filmstrip"
+        title="Ideas & Insights"
+        items={industry.ideasInsights}
+        variant="insight"
+      />
+
+      {/* ── Ideas & Insights Alt 3: Stacked Reveal ── */}
+      <StackedReveal
+        id="ideas-insights-stacked"
+        title="Ideas & Insights"
+        items={industry.ideasInsights}
+        variant="insight"
+      />
+
+      {/* ── Ideas & Insights Alt 4: Spotlight Selector ── */}
+      <SpotlightSelector
+        id="ideas-insights-spotlight"
+        title="Ideas & Insights"
+        items={industry.ideasInsights}
+        variant="insight"
+      />
+
+      {/* ── Ideas & Insights Alt 5: Magazine Spread ── */}
+      <MagazineSpread
+        id="ideas-insights-magazine"
+        title="Ideas & Insights"
+        items={industry.ideasInsights}
+        variant="insight"
+      />
+
+      {/* ── Ideas & Insights Alt 6: Timeline ── */}
+      <InsightsTimeline
+        id="ideas-insights-timeline"
+        title="Ideas & Insights"
+        items={industry.ideasInsights}
+        variant="insight"
+      />
+
+      {/* ── Ideas & Insights Alt 7: Rolodex ── */}
+      <InsightsRolodex
+        id="ideas-insights-rolodex"
+        title="Ideas & Insights"
+        items={industry.ideasInsights}
+        variant="insight"
+      />
+
+      {/* ── Ideas & Insights Alt 8: Ticker Feed ── */}
+      <InsightsTickerFeed
+        id="ideas-insights-ticker"
+        title="Ideas & Insights"
+        items={industry.ideasInsights}
+        variant="insight"
+      />
+
+      {/* ── Ideas & Insights Alt 9: Mosaic ── */}
+      <InsightsMosaic
+        id="ideas-insights-mosaic"
+        title="Ideas & Insights"
+        items={industry.ideasInsights}
+        variant="insight"
+      />
+
+      {/* ── Ideas & Insights Alt 10: Accordion Digest ── */}
+      <InsightsAccordionDigest
+        id="ideas-insights-digest"
+        title="Ideas & Insights"
+        items={industry.ideasInsights}
+        variant="insight"
+      />
+
+      {/* ── Rolodex Variant 1: Light ── */}
+      <RolodexLight
+        id="ideas-insights-rolodex-light"
+        title="Ideas & Insights"
+        items={industry.ideasInsights}
+        variant="insight"
+      />
+
+      {/* ── Rolodex Variant 2: Stacked Deck ── */}
+      <RolodexStacked
+        id="ideas-insights-rolodex-stacked"
+        title="Ideas & Insights"
+        items={industry.ideasInsights}
+        variant="insight"
+      />
+
+      {/* ── Rolodex Variant 3: Minimal Typography ── */}
+      <RolodexMinimal
+        id="ideas-insights-rolodex-minimal"
+        title="Ideas & Insights"
+        items={industry.ideasInsights}
+        variant="insight"
+      />
+
       {/* ── Original Closing CTA ── */}
       <ClosingCTA tagline={industry.closingTagline} cta={industry.closingCta} />
 

@@ -1,67 +1,134 @@
-import { Link } from 'react-router-dom';
-import { industries, industryOrder } from '../data/industries';
-import { ArrowRight } from 'lucide-react';
-
 export default function Footer() {
+  const columns = [
+    {
+      title: 'What We Do',
+      items: [
+        'Applied AI',
+        'Data & Insights\u1D2C\u1D35',
+        'Experience\u1D2C\u1D35',
+        'GCC\u1D2C\u1D35',
+        'Operations\u1D2C\u1D35',
+        'Platform Engineering\u1D2C\u1D35',
+        'Product\u1D2C\u1D35',
+        'Quality Engineering \u1D2C\u1D35',
+        'AI Workforce Transformation',
+      ],
+    },
+    {
+      title: 'Industries',
+      items: [
+        'Banking & Financial Services',
+        'Communications, Media and Entertainment',
+        'Healthcare & Life Sciences',
+        'Retail and Consumer Goods',
+        'High-tech',
+        'Travel and Hospitality',
+      ],
+    },
+    {
+      title: 'Who We Are',
+      items: [
+        'Leadership',
+        'Analyst Recognition',
+        'Certifications',
+        'Locations',
+        'ESG',
+      ],
+    },
+    {
+      title: 'Quick Links',
+      items: [
+        'Insights and impact',
+        'Careers India',
+        'Careers North America',
+        'Careers Europe',
+        'Careers Asia Pacific',
+        'Global Delivery Hubs',
+        'Contact us',
+      ],
+    },
+  ];
+
+  const socials = ['Linkedin', 'Youtube', 'Instagram'];
+
+  const legalLinks = [
+    'Privacy Policy',
+    'Terms of Use',
+    'Accessibility Disclosure',
+    'AI-enhanced Content Notice',
+    'Security Disclosure Policy',
+  ];
+
   return (
-    <footer className="bg-cream2 border-t border-black/6">
-      {/* CTA Area */}
-      <div className="relative max-w-[1360px] mx-auto px-[60px] max-lg:px-6 py-20 text-center">
-        <div className="absolute inset-0 dot-grid-bg opacity-40" />
-        {/* Ascendion logo watermark */}
-        <div className="mb-6 opacity-15">
-          <span className="text-[48px] font-extrabold text-black/30 tracking-tight" style={{ fontFamily: 'var(--font-family-display)' }}>
-            Ascendion
-          </span>
-        </div>
-        <h2
-          className="text-[clamp(24px,3.5vw,42px)] font-normal text-black leading-[1.1] tracking-[-0.025em] mb-4 max-w-lg mx-auto"
-          style={{ fontFamily: 'var(--font-family-display)' }}
-        >
-          Engineering to the power of AI
-        </h2>
-        <p
-          className="text-g6 text-[16px] mb-8 max-w-sm mx-auto"
-          style={{ fontFamily: 'var(--font-family-display)', letterSpacing: '-0.01em' }}
-        >
-          Transform how your enterprise builds, runs, and grows.
-        </p>
-        <div className="flex items-center justify-center gap-3 flex-wrap">
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-violet text-white text-[11px] font-normal uppercase tracking-[0.1em] rounded-sm hover:shadow-[0_8px_28px_rgba(100,100,215,0.35)] transition-all no-underline"
-            style={{ fontFamily: 'var(--font-family-display)' }}
-          >
-            Contact Us <ArrowRight size={13} />
-          </a>
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white text-[11px] font-normal uppercase tracking-[0.1em] rounded-sm hover:shadow-[0_8px_28px_rgba(0,0,0,0.3)] transition-all no-underline"
-            style={{ fontFamily: 'var(--font-family-display)' }}
-          >
-            Get a Demo
-          </a>
+    <footer className="bg-cream border-t border-black/6">
+      {/* Main footer grid */}
+      <div className="max-w-[1360px] mx-auto px-[60px] max-lg:px-6 pt-16 pb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10">
+          {columns.map((col) => (
+            <div key={col.title}>
+              <h4
+                className="text-black text-[13px] font-bold mb-5"
+                style={{ fontFamily: 'var(--font-family-body)' }}
+              >
+                {col.title}
+              </h4>
+              <ul className="space-y-2.5 list-none p-0 m-0">
+                {col.items.map((item) => (
+                  <li key={item}>
+                    <span
+                      className="text-g6 text-[13px] leading-[1.5] hover:text-black transition-colors cursor-pointer"
+                      style={{ fontFamily: 'var(--font-family-body)' }}
+                    >
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          {/* Social links column */}
+          <div>
+            <ul className="space-y-2.5 list-none p-0 m-0 lg:mt-0 mt-2">
+              {socials.map((s) => (
+                <li key={s}>
+                  <span
+                    className="text-violet text-[13px] leading-[1.5] hover:text-black transition-colors cursor-pointer"
+                    style={{ fontFamily: 'var(--font-family-body)' }}
+                  >
+                    {s}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
-      {/* Footer bar */}
+      {/* Legal bar */}
       <div className="border-t border-black/6">
-        <div className="max-w-[1360px] mx-auto px-[60px] max-lg:px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3">
-          <div className="flex items-center gap-6">
-            {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-black/35 hover:text-black text-[11px] transition-colors no-underline"
-                style={{ fontFamily: 'var(--font-family-body)' }}
-              >
-                {item}
-              </a>
+        <div className="max-w-[1360px] mx-auto px-[60px] max-lg:px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p
+            className="text-black/40 text-[11px]"
+            style={{ fontFamily: 'var(--font-family-body)' }}
+          >
+            Copyright 2026, ASCENDION. All rights reserved.
+          </p>
+          <div className="flex flex-wrap items-center gap-1.5">
+            {legalLinks.map((link, i) => (
+              <span key={link} className="flex items-center gap-1.5">
+                <span
+                  className="text-black/40 hover:text-black text-[11px] transition-colors cursor-pointer"
+                  style={{ fontFamily: 'var(--font-family-body)' }}
+                >
+                  {link}
+                </span>
+                {i < legalLinks.length - 1 && (
+                  <span className="text-black/20 text-[11px]">|</span>
+                )}
+              </span>
             ))}
           </div>
-          <p className="text-black/35 text-[11px]" style={{ fontFamily: 'var(--font-family-body)' }}>
-            &copy; 2026 Ascendion. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>
